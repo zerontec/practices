@@ -2,31 +2,31 @@ from turtle import color
 from abc import ABC, abstractmethod 
 
 
-# class Dino:
-#     _encendido = True  #propiedad
+class Dino:
+    _encendido = True  #propiedad
     
-#     def enciende(self):
-#         self._encendido = True
+    def enciende(self):
+        self._encendido = True
 
-#     def apaga(self):
-#         self._encendido = False
+    def apaga(self):
+        self._encendido = False
 
-#     def isEncendido(self):
-#         return self._encendido    
+    def isEncendido(self):
+        return self._encendido    
 
 
 #crear una instancia significa crear un objeto 
 # self hago referencia a una variabler del  metodo de mi clase 
 
 
-# d = Dino()
-# d.apaga()
-# d.enciende()
-# print(d.apaga())
+d = Dino()
+d.apaga()
+d.enciende()
+print(d.apaga())
 
-# d2 = Dino()
-# d2.isEncendido()
-# print(d2.isEncendido())
+d2 = Dino()
+d2.isEncendido()
+print(d2.isEncendido())
 
 
 # Clases Estaticas 
@@ -43,23 +43,22 @@ class Estatica:
 
 
 #### Clases estaticas #####
-# Estatica.incrementa()
+Estatica.incrementa()
 
-# print(Estatica.numero)
+print(Estatica.numero)
 
-# class Opciones:
-#    ServidorSeguro = true
-#    Reiniciar= false
+class Opciones:
+   ServidorSeguro = true
+   Reiniciar= false
 
-# if Opciones.Reiniciar:
-#     Re 
+if Opciones.Reiniciar:
+     
 
 
 # #################### herencia ######################
 
-
-class Juguete:
-    _encendido = True
+    class Juguete:
+        _encendido = True
 
     def __init__(self) :
        print('estoy en la clase juguete en su constructor')
@@ -88,10 +87,10 @@ class Potato(Juguete):
 p = Potato()
 
 p.encendido
-##################-----------------------------------------------#####################
+# ##################-----------------------------------------------#####################
 
 
-############################### Constructor ############################################
+# ############################### Constructor ############################################
        
 class DinoA(Juguete):
     color = None
@@ -120,9 +119,9 @@ c.quitarOreja
 
 print(c.color)
 print(c.nombre)
-##################################--------------------------##########################################
+# ##################################--------------------------##########################################
 
-############################  clases abstractas  #################
+# ############################  clases abstractas  #################
 
 
 class Animal(ABC):
@@ -154,15 +153,15 @@ g = Gato()
 g.sonido
 
 
-# a  = Animal()  # no podemos instanciar una clase abstracta tenemos que drivarla sirve para definir 
-                 # un conjunto de las clases abstarcta 
-                 # tambien pueden tener metodos no abstras
+# # a  = Animal()  # no podemos instanciar una clase abstracta tenemos que drivarla sirve para definir 
+#                  # un conjunto de las clases abstarcta 
+#                  # tambien pueden tener metodos no abstras
 
 
-                 ###################-----------Relaciones is has   has A----------##############
+#                  ###################-----------Relaciones is has   has A----------##############
 
-#Las Relaciones is Has se llaman Herencia  ejemplo perro es un animal derivan una de otra                 
-# has A contiene es decir composicion es decir una clase esta compuesta de otras clases 
+# #Las Relaciones is Has se llaman Herencia  ejemplo perro es un animal derivan una de otra                 
+# # has A contiene es decir composicion es decir una clase esta compuesta de otras clases 
 
 
 class Motor:
@@ -182,3 +181,15 @@ class Coche:
 v = Coche()
 
 print(v.carroceria.ventanas)
+
+
+
+#PRACTICES RECURSION 
+def suma(list):
+    return sumaB(list, 0)
+
+def sumaB(list, idx):
+    if idx == len(list): return 0
+    return list[idx]  +  sumaB(list, idx + 1)
+
+print(suma([1,5,7,-3]))
